@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <script src="blotter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/fliesMaterial.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/liquidDistortMaterial.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/rollingDistortMaterial.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+    <title>Michal Hicz</title>
+</head>
+<body>
+<div class="str">
+    <div id="ico-js"></div>
+    <div id="ico-html"></div>
+    <div class="nav-head">
+        <header>
+            <div id="meno"></div>
+            <div id="priezv"></div>
+            <div id="kontakt">
+                <p>/ *</p>
+                <p class="m">michal07.h@gmail.com</p>
+                <p class="k">+421 910405579</p>
+                <p>*/</p>
+            </div>
+        </header>
+    </div>
+    <div class="body-main">
+        <h1 class="omne-n">omne()</h1>
+        <p id="omne"></p>
+        <p id="omne2"></p>
+        <p class="zr-n">Moje zručnosti:</p>
+        <p id="zr"></p>
+        <p id="zr2"></p>
+        <button class="zivotopis-b" onclick="location.href='Životopis.pdf'" type="button"><b>Životopis</b></button>
+        <div id="ico-css"></div>
+    </div>
+</div>
+</body>
+<script>
+    new kursor({
+        type: 4,
+        color: '#F1F1F0',
+        removeDefaultCursor: true
+    })
+</script>
+<script>
+    var meno = new Blotter.Text("Michal", {
+        family: "'Raleway', sans-serif",
+        size: 82,
+        weight: 500,
+        fill: "#F1F1F0",
+    })
+    var material = new Blotter.LiquidDistortMaterial();;
+    material.uniforms.uSpeed.value = .4;
+    material.uniforms.uSeed.value = .1;
+    material.uniforms.uVolatility.value = .04;
+
+    var blotter = new Blotter(material, { texts: meno })
+    var sc = blotter.forText(meno);
+    sc.appendTo(document.getElementById("meno"));
+</script>
+<script>
+    var meno = new Blotter.Text("Hicz", {
+        family: "'Raleway', sans-serif",
+        size: 82,
+        weight: 650,
+        fill: "#F1F1F0",
+    })
+    var material = new Blotter.LiquidDistortMaterial();;
+    material.uniforms.uSpeed.value = .45;
+    material.uniforms.uSeed.value = .8;
+    material.uniforms.uVolatility.value = .04;
+
+    var blotter = new Blotter(material, { texts: meno })
+    var sc = blotter.forText(meno);
+    sc.appendTo(document.getElementById("priezv"));
+</script>
+<script>
+    var meno = new Blotter.Text("Som kreatívny frontend developer, dizajnér a umelec.", {
+            family: "'Raleway', sans-serif",
+            size: 22,
+            weight: 400,
+            fill: "#7A7C80",
+        })
+    var meno2 = new Blotter.Text("Tvorbe webstránok sa venujem viac ako 2 roky.", {
+            family: "'Raleway', sans-serif",
+            size: 22,
+            weight: 400,
+            fill: "#7A7C80",
+        })
+    var material = new Blotter.RollingDistortMaterial();
+    material.uniforms.uSineDistortSpread.value = 0.01;
+    material.uniforms.uSineDistortCycleCount.value = 4;
+    material.uniforms.uSineDistortAmplitude.value = 0.05;
+    material.uniforms.uNoiseDistortVolatility.value = 20;
+    material.uniforms.uNoiseDistortAmplitude.value = 0.01;
+    material.uniforms.uRotation.value = 60;
+    material.uniforms.uSpeed.value= 0.2
+
+    var blotter1 = new Blotter(material, { texts: meno })
+    var sc1 = blotter1.forText(meno);
+    sc1.appendTo(document.getElementById("omne"));
+    var blotter2 = new Blotter(material, { texts: meno2 })
+    var sc2 = blotter2.forText(meno2);
+    sc2.appendTo(document.getElementById("omne2"));
+</script>
+<script>
+    var meno = new Blotter.Text("JavaScript, HTML, CSS, ReactJS, jQuery, Python", {
+        family: "'Raleway', sans-serif",
+        size: 24,
+        weight: 400,
+        fill: "#7A7C80",
+    })
+    var material = new Blotter.RollingDistortMaterial();
+    material.uniforms.uSineDistortSpread.value = 0.02;
+    material.uniforms.uSineDistortCycleCount.value = 6;
+    material.uniforms.uSineDistortAmplitude.value = 0.2;
+    material.uniforms.uNoiseDistortVolatility.value = 20;
+    material.uniforms.uNoiseDistortAmplitude.value = .008
+    material.uniforms.uRotation.value = 100;
+    material.uniforms.uSpeed.value = 0.4
+
+    var blotter1 = new Blotter(material, { texts: meno })
+    var sc1 = blotter1.forText(meno);
+    sc1.appendTo(document.getElementById("zr"));
+    /**/
+    var meno2 = new Blotter.Text("Adobe Premiere Pro, Adobe After Effects", {
+        family: "'Raleway', sans-serif",
+        size: 24,
+       weight: 400,
+        fill: "#7A7C80",
+    })
+    var material2 = new Blotter.RollingDistortMaterial();
+    material2.uniforms.uSineDistortSpread.value = 0.04;
+    material2.uniforms.uSineDistortCycleCount.value = 6;
+    material2.uniforms.uSineDistortAmplitude.value = 0.2;
+    material2.uniforms.uNoiseDistortVolatility.value = 20;
+    material2.uniforms.uNoiseDistortAmplitude.value = .004
+    material2.uniforms.uRotation.value = 180;
+    material2.uniforms.uSpeed.value = 0.25
+
+    var blotter2 = new Blotter(material2, { texts: meno2 })
+    var sc2 = blotter2.forText(meno2);
+    sc2.appendTo(document.getElementById("zr2"));
+</script>
+<!--pozadie-->
+<script>
+    var meno = new Blotter.Text("js", {
+        family: "'Raleway', sans-serif",
+        size: 65,
+        weight: 600,
+        fill: "#333333",
+    })
+    var material = new Blotter.FliesMaterial()
+    material.uniforms.uSpeed.value = 5;
+    material.uniforms.uPointCellWidth.value = 0.03;
+    material.uniforms.uPointRadius.value = .8;
+
+    var blotter = new Blotter(material, { texts: meno })
+    var sc = blotter.forText(meno);
+    sc.appendTo(document.getElementById("ico-js"));
+</script>
+<script>
+    var meno = new Blotter.Text("html", {
+        family: "'Raleway', sans-serif",
+        size: 50,
+        weight: 600,
+        fill: "#333333",
+    })
+    var material = new Blotter.FliesMaterial()
+    material.uniforms.uSpeed.value = 5;
+    material.uniforms.uPointCellWidth.value = 0.03;
+    material.uniforms.uPointRadius.value = .8;
+
+    var blotter = new Blotter(material, { texts: meno })
+    var sc = blotter.forText(meno);
+    sc.appendTo(document.getElementById("ico-html"));
+</script>
+<script>
+    var meno = new Blotter.Text("css", {
+        family: "'Raleway', sans-serif",
+        size: 75,
+        weight: 600,
+        fill: "#333333",
+    })
+    var material = new Blotter.FliesMaterial()
+    material.uniforms.uSpeed.value = 5;
+    material.uniforms.uPointCellWidth.value = 0.02;
+    material.uniforms.uPointRadius.value = .8;
+
+    var blotter = new Blotter(material, { texts: meno })
+    var sc = blotter.forText(meno);
+    sc.appendTo(document.getElementById("ico-css"));
+</script>
+</html>
